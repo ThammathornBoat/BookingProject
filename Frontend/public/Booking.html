@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Page</title>
     <link rel="stylesheet" href="../src/App.css">
+    <script src="../src/App.js"></script>
 </head>
 <body>
     <header>
@@ -13,89 +14,26 @@
         <div class="regis-box" onclick="location.href='regis.html';">สร้างบัญชี</div>
     </header>
     <main>
-        <div class="container">
+        <div class="search-container">
             <div class="input-box">
                 <label for="checkin">Check-in Date:</label>
-                <input type="date" id="checkin" name="checkin" required style="margin-top: 10px;">
+                <input type="date" id="checkin" name="checkin" required>
             </div>
             <div class="input-box">
                 <label for="checkout">Check-out Date:</label>
-                <input type="date" id="checkout" name="checkout" required style="margin-top: 10px;">
+                <input type="date" id="checkout" name="checkout" required>
             </div>
-            <div class="input-box"
-                <label for="numPeople">จำนวนผู้เข้าพัก:</label>
-                <input type="number" id="numPeople" name="numPeople" required style="margin-top: 10px;">
+            <div class="input-box">
+                <label for="numGuests">Number of Guests:</label>
+                <input type="number" id="numGuests" name="numGuests" required>
+                <button id="searchBtn">ค้นหา</button>
             </div>
+         
         </div>
-        <form action="succeed.html" method="POST">
+        <div id="roomDetails"></div>
+    </main>
+    <script src="../src/App.js"></script>
+</body>
+</html>
 
-            <section class="accommodations">
-                <div class="accommodation">
-                    <img src="../../photo/1bed1king.png" alt="Accommodation 1">
-                    <div class="info">
-                        <h3>สวีท 1 ห้องนอน 1 เตียงคิงไซส์ มีระเบียง (1 King Bed 1 Bedroom Suite With Balcony)
-                        </h3>
-                        <p>1 เตียงคิงไซส์</p><br>
-                        <p> ขนาดห้อง: 36 ตารางเมตร </P><br>
-                        <p>วิว: เมือง</P><br>
-                        <p>ระเบียง/ชานเรือน</p><br>
-                        <h4>Price: ฿2,499 / night</h4>
-                        
-                    </div>
-                    <div class="box" style="background-color: #1753d600; color: #030303;">
-                        <h3>Booking (จองที่พัก)</h3>
-                        <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
-                        <button onclick="location.href='booking.html';"style="background-color: #144bc3; ">จองเลย</button>
-                    </div>
-                    
-                </div>
-                <div class="accommodation">
-                    <img src="../../photo/1king.png" alt="Accommodation 2">
-                    <div class="info">
-                        <h3>ห้องมาตรฐาน เตียงคิงไซส์ (1 King Bed Standard)</h3>
-                        <p>1 เตียงคิงไซส์</p><br>
-                        <p> ขนาดห้อง: 28 ตารางเมตร </P><br>
-                        <p>วิว: เมือง</P><br>
-                        <p>ระเบียง/ชานเรือน</p><br><br><br>
-                        <h4>Price: ฿1,899 / night</h4>
-                    </div>
-                    <div class="box" style="background-color: #1753d600; color: #030303;">
-                        <h3>Booking (จองที่พัก)</h3>
-                        <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
-                        <button onclick="location.href='booking.html';"style="background-color: #144bc3; ">จองเลย</button>
-                    </div>
-                </div>
-                <div class="accommodation">
-                    <img src="../../photo/2single.png" alt="Accommodation 3">
-                    <div class="info">
-                        <h3>ห้องมาตรฐาน 2 เตียงเดี่ยว วิวเมือง มีระเบียง (2 Single Beds Standard City View Balcony)</h3>
-                        <p>2 เตียงเดี่ยว</p><br>
-                        <p> ขนาดห้อง: 28 ตารางเมตร </P><br>
-                        <p>วิว: เมือง</P><br>
-                        <p>ระเบียง/ชานเรือน</p><br><br>
-                        <h4>Price: ฿1,699 / night</h4>
-                    </div>
-                    <div class="box" style="background-color: #1753d600; color: #030303;">
-                        <h3>Booking (จองที่พัก)</h3>
-                        <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
-                        <button onclick="location.href='booking.html';"style="background-color: #144bc3; ">จองเลย</button>
-                    </div>
-                </div>
-                <div class="accommodation">
-                    <img src="../../photo/standard.png" alt="Accommodation 4">
-                    <div class="info">
-                        <h3>ห้องมาตรฐาน (Standard Room)
-                        </h3>
-                        <p>1 เตียงคิงไซส์</p><br>
-                        <p> ขนาดห้อง: 28 ตารางเมตร </P><br>
-                        <p>วิว: เมือง</P><br>
-                        <p>ระเบียง/ชานเรือน</p><br><br><br><br><br>
-                        <h4>Price: ฿1,699 / night</h4>
-                    </div>
-                    <div class="box" style="background-color: #1753d600; color: #030303;">
-                        <h3>Booking (จองที่พัก)</h3>
-                        <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
-                        <button onclick="location.href='booking.html';"style="background-color: #144bc3; ">จองเลย</button>
-                    </div>
-            </section>
             

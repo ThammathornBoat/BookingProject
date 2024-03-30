@@ -46,7 +46,7 @@ header {
 }
 
 
-.container {
+.search-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,3 +149,39 @@ button:hover {
   letter-spacing: 1px;
   margin-top: 70px;
 }
+.search-button {
+  background-color: #144bc3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0e36a6;
+  margin-left: 0px;
+}
+
+.available {
+  border: 2px solid green;
+}
+
+.not-available {
+  border: 2px solid red;
+}
+#searchBtn {
+  background-color: #589ae0; /* สีพื้นหลัง */
+  color: white; /* สีข้อความ */
+  padding: 10px 20px; /* ขนาดของปุ่ม */
+  border: none; /* ไม่มีเส้นขอบ */
+  border-radius: 5px; /* มุมโค้ง */
+  cursor: pointer; /* เปลี่ยนเป็นเคอร์เซอร์เมื่อชี้ */
+}
+
+#searchBtn:hover {
+  background-color: #4176bb; /* สีพื้นหลังเมื่อโฮเวอร์ */
+}
+
+
+
