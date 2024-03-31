@@ -182,6 +182,28 @@ button:hover {
 #searchBtn:hover {
   background-color: #4176bb; /* สีพื้นหลังเมื่อโฮเวอร์ */
 }
+.accommodations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; /* เรียงตามด้านข้างของหน้าจอ */
+  gap: 20px; /* ระยะห่างระหว่างห้อง */
+}
+
+.accommodation {
+  width: 300px; /* กำหนดความกว้างของแต่ละห้อง */
+}
+#roomDetails {
+  display: flex; /* เรียงแต่ละห้องในแถวแนวนอน */
+  justify-content: space-between; /* วางแต่ละห้องให้อยู่ทางด้านข้าง */
+  flex-wrap: wrap; /* ให้ขอบเขตของ Flexbox เต็มทั้งกว้างและสูง */
+}
+
+.accommodation {
+  width: 300px; /* กำหนดความกว้างของแต่ละห้อง */
+  margin-bottom: 20px; /* ระยะห่างระหว่างแต่ละห้อง */
+}
+
 
 
 
