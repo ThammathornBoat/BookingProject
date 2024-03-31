@@ -45,7 +45,9 @@ def add_room():
     new_room = {
         "_id":num,
         "name":data["name"],
+        "bedtype":data["bedtype"],
         "size":data["size"],
+        "balcony":data["balcony"],
         "price":data["price"],
     }
     rooms.append(new_room)
@@ -71,8 +73,10 @@ def update_room(id):
             collection.update_many(
                 {"_id":s["_id"]},
                 {"$set":{"name" : data["name"],
-                         "price" : data["price"],
-                         "image":data["image"],
+                         "bedtype":data["bedtype"],
+                         "size":data["size"],
+                         "balcony":data["balcony"],
+                         "price":data["price"],
                         }
                 }
             )
