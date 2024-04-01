@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import '../src/script' ;
 
 function Accommodation(props) {
   const { _id, name, img, bedType, size, view, balcony, price } = props.room;
@@ -24,7 +25,7 @@ function Accommodation(props) {
         <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
         <button onClick={() =>  { onBookNow(_id);
          onClickDeleteRoom(_id);
-        }} className="search-button">จองเลย</button>
+        }} className="openButton">จองเลย</button>
       </div>
     </div>
   );
