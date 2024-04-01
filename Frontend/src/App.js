@@ -3,11 +3,13 @@ import axios from 'axios';
 import './App.css';
 
 function Accommodation(props) {
-  const { name, bedType, size, view, balcony, price } = props.room;
+  const { _id, name, img, bedType, size, view, balcony, price } = props.room;
+  const { onClickDeleteRoom, onBookNow } = props;
+  const imagePath = `./photo/${img.toLowerCase().replace(/\s/g, '')}.png`;
 
   return (
     <div className="accommodation">
-      <img src={`../../photo/${name.toLowerCase().replace(/\s/g, '')}.png`} alt={name} />
+      <img src={imagePath} alt={name} />
       <div className="info">
         <h3>{name}</h3>
         <p>{bedType}</p><br />
@@ -20,7 +22,9 @@ function Accommodation(props) {
       <div className="button-container">
         <h3>Booking (จองที่พัก)</h3>
         <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
-        <button onClick={() => { window.location.href = './public/booking.html'; }} className="search-button">จองเลย</button>
+        <button onClick={() =>  { onBookNow(_id);
+         onClickDeleteRoom(_id);
+        }} className="search-button">จองเลย</button>
       </div>
     </div>
   );
@@ -28,6 +32,8 @@ function Accommodation(props) {
 
 function App() {
   const [rooms, setRooms] = useState([]);
+  const [selectedRoomId, setSelectedRoomId] = useState(null);
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   useEffect(() => {
     const fetchRooms = async () => {
@@ -41,12 +47,24 @@ function App() {
 
     fetchRooms();
 
-    const interval = setInterval(() => {
-      fetchRooms();
-    }, 400000);
-
-    return () => clearInterval(interval);
   }, []);
+
+  const onBookNow = (id) => {
+    setSelectedRoomId(id);  // Set selected room ID
+    setButtonPopup(true);  // Open the popup
+  }
+
+
+  const onClickDeleteRoom = (id) => {
+    axios.delete('http://127.0.0.1:5000/rooms/' + id)
+    .then(response => {
+        console.log('Room deleted:', response.data);
+        setRooms(response.data);
+    })
+    .catch(error => {
+        console.error('Error deleting room:', error);
+    });
+}
 
   return (
     <div>
@@ -72,9 +90,14 @@ function App() {
         </div>
 
         <section className="accommodations">
-          {rooms.map((room, index) => (
-            <Accommodation key={index} room={room} />
-          ))}
+        {Array.isArray(rooms) && rooms.length > 0 ? (
+          rooms.map((room, index) => (
+            <Accommodation key={index} room={room} onBookNow={onBookNow} onClickDeleteRoom={onClickDeleteRoom} />
+          ))
+        ) : (
+          <p>No rooms available</p>
+        )}
+
         </section>
       </main>
     </div>
