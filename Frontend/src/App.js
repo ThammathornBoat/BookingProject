@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import '../src/script' ;
+import '../src/script';
+
 
 function Accommodation(props) {
   const { _id, name, img, bedType, size, view, balcony, price } = props.room;
@@ -23,9 +24,7 @@ function Accommodation(props) {
       <div className="button-container">
         <h3>Booking (จองที่พัก)</h3>
         <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
-        <button onClick={() =>  { onBookNow(_id);
-         onClickDeleteRoom(_id);
-        }} className="openButton">จองเลย</button>
+        <button id="openButton" onClick={() =>{}}>จองเลย</button>
       </div>
     </div>
   );
@@ -87,7 +86,7 @@ function App() {
             <label htmlFor="numPeople">จำนวนผู้เข้าพัก:</label>
             <input type="number" id="numPeople" name="numPeople" required />
           </div>
-          <button id="searchBtn" onClick={() =>{}}>Search</button>
+          <button id="openButton" onClick={() =>{}}>จองเลย</button>
         </div>
 
         <section className="accommodations">
