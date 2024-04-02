@@ -74,19 +74,7 @@ function App() {
 
       <main>
         <div className="search-container">
-          <div className="input-box">
-            <label htmlFor="checkin">Check-in Date:</label>
-            <input type="date" id="checkin" name="checkin" required />
-          </div>
-          <div className="input-box">
-            <label htmlFor="checkout">Check-out Date:</label>
-            <input type="date" id="checkout" name="checkout" required />
-          </div>
-          <div className="input-box">
-            <label htmlFor="numPeople">จำนวนผู้เข้าพัก:</label>
-            <input type="number" id="numPeople" name="numPeople" required />
-            <button id="searchBtn" onClick={() =>{}}>Search</button>
-          </div>
+          
         </div>
 
         <section className="accommodations">
