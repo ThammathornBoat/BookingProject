@@ -62,36 +62,36 @@
         <h1>Booking Form</h1>
         <form action="https://script.google.com/macros/s/AKfycbyrjJ9lgLe9cAoNbs72GgD8jgqjuaRViaLejFJGHm4/dev" method="post">
             <div class="form-group">
-                <label for="firstName">First Name:</label>
+                <label for="firstName">First Name: (ชื่อจริง)</label>
                 <input type="text" id="firstName" name="firstName" required>
             </div>
             <div class="form-group">
-                <label for="lastName">Last Name:</label>
+                <label for="lastName">Last Name: (นามสกุล)</label>
                 <input type="text" id="lastName" name="lastName" required>
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number:</label>
+                <label for="phone">Phone Number:(หมายเลขโทรศัพท์)</label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email">Email: (อีเมล)</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="room">Room Type:</label>
                 <select id="room" name="room">
-                    <option value="standard">Standard Room</option>
-                    <option value="deluxe">Deluxe Room</option>
-                    <option value="suite">Suite</option>
-                    <option value="penthouse">Penthouse</option>
+                    <option value="standard">Sweet Room</option>
+                    <option value="deluxe">King Bed Standard Room</option>
+                    <option value="suite">Single Beds Standard</option>
+                    <option value="penthouse">Standard Room</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="guests">Number of Guests:</label>
+                <label for="guests">Number of Guests: (จำนวนผู้เข้าพัก)</label>
                 <input type="number" id="guests" name="guests" min="1" required>
             </div>
             <div class="form-group">
-                <label for="nights">Number of Nights:</label>
+                <label for="nights">Number of Nights: (จำนวนคืนที่เข้าพัก)</label>
                 <input type="number" id="nights" name="nights" min="1" required>
             </div>
             <button type="submit">Confirm Booking</button>
