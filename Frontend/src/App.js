@@ -86,7 +86,7 @@ function App() {
             <label htmlFor="numPeople">จำนวนผู้เข้าพัก:</label>
             <input type="number" id="numPeople" name="numPeople" required />
           </div>
-          <button id="openButton" onClick={() =>{}}>จองเลย</button>
+          <button id="searchBtn" onClick={() =>{}}>Search</button>
         </div>
 
         <section className="accommodations">
