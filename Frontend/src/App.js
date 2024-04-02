@@ -3,7 +3,6 @@ import axios from 'axios';
 import './App.css';
 import '../src/script';
 
-
 function Accommodation(props) {
   const { _id, name, img, bedType, size, view, balcony, price } = props.room;
   const { onClickDeleteRoom, onBookNow } = props;
@@ -24,7 +23,8 @@ function Accommodation(props) {
       <div className="button-container">
         <h3>Booking (จองที่พัก)</h3>
         <p>เลือกห้องที่ถูกใจคุณ แล้วจองเลย!</p>
-        <button id="openButton" onClick={() =>{}}>จองเลย</button>
+        <button id="openButton" onClick={() => window.open('./Book.html', '_blank')}>จองเลย</button>
+
       </div>
     </div>
   );
@@ -85,8 +85,8 @@ function App() {
           <div className="input-box">
             <label htmlFor="numPeople">จำนวนผู้เข้าพัก:</label>
             <input type="number" id="numPeople" name="numPeople" required />
+            <button id="searchBtn" onClick={() =>{}}>Search</button>
           </div>
-          <button id="searchBtn" onClick={() =>{}}>Search</button>
         </div>
 
         <section className="accommodations">
